@@ -1,1 +1,27 @@
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    // Seed the random number generator with the current time
+    srand(time(0));
+    
+    // Generate a random number between 1 and 100
+    int randomNumber = rand() % 100 + 1;
+    
+    // Guess whether the number is odd or even
+    char guess;
+    printf("Random Number: %d\n", randomNumber);
+    printf("Guess if the number is odd (o) or even (e): ");
+    scanf(" %c", &guess);
+    
+    // Check if the guess is correct
+    if ((randomNumber % 2 == 0 && guess == 'e') || (randomNumber % 2 != 0 && guess == 'o')) {
+        printf("Your guess is correct!\n");
+    } else {
+        printf("Your guess is incorrect!\n");
+    }
+    
+    return 0;
+}
